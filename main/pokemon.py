@@ -1,4 +1,5 @@
 import random
+import time
 
 #class for creating your trainer
 class Trainer:
@@ -265,6 +266,7 @@ class Pokemon(Trainer):
                 if result == "win":
                     exp += 100
                     print(f"{pokemon} gained {exp} experience points")
+                    time.sleep(2)
                     # if 500 exp is reached, pokemon will level up
                     if exp == 500:
                         print(f"{pokemon} has reached level {self.level + 1}")
@@ -279,10 +281,11 @@ class Pokemon(Trainer):
     def evolve(self):
         for index, pokemon in enumerate(self.party):
             if (index == 0) and (self.level == 16):
-                return(f"WOW!!!, {pokemon} has evolved to Charmeleon!")
+                print("What Charmander is evolving...\n")
+                time.sleep(4)
+                print(f"WOW!!!, {pokemon} has evolved to Charmeleon!")
             else:
                 pass
-
 
 #prints the function of choice
 if __name__ == "__main__":
